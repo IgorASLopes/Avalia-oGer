@@ -1,0 +1,27 @@
+echo digite o link
+read link
+
+foto="$link"
+tipo=$(echo "$foto" | grep -o .jpg)
+echo $tipo
+
+pdf="$link"
+pdf=$(echo "$pdf" | grep -o .pdf)
+echo $pdf
+
+if test "$tipo" = ".jpg"
+then
+cd /home/destiny/Downloads
+echo fazendo Download...
+sleep 1
+wget $link
+fi
+
+if test "$pdf" = ".pdf"
+then
+cd /home/destiny/Downloads
+echo fazendo Download...
+sleep 1
+wget $link
+fi
+
